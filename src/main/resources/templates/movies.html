@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"  xmlns:th = "http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movies</title>
+</head>
+<body>
+<div class="container">
+<h1> MOVIES </h1>
+
+
+    <ul th:if="${movies.size() > 0}" class="list-group">
+        <li class="list-group-item" th:each="movie : ${movies}" th:text="${movies.name}"></li>
+    </ul>
+
+    <div th:unless="${movies.size() > 0}" class="alert alert-info"> The list is empty </div>
+
+</div>
+</body>
+</html>
